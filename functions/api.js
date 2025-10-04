@@ -44,6 +44,13 @@ router.get("/hello", (req, res) => {
     `);
 });
 
+router.get("/users", (req, res) => {
+  res.json([
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" },
+  ]);
+});
 // Link the router to the base path for Netlify Functions
 app.use("/.netlify/functions/api", router);
 
